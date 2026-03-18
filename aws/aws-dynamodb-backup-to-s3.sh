@@ -6,7 +6,7 @@ set -euo pipefail
 REGION="[ENTER_REGION]"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 S3_BUCKET="[ENTER_S3_BUCKET]"
-S3_PREFIX="[ENTER_PREFIX]/$TIMESTAMP/dynamodb"
+S3_PREFIX="[ENTER_PREFIX]/dynamodb-backup"
 TMP_DIR=$(mktemp -d)
 MANIFEST_FILE="$TMP_DIR/manifest.json"
 
