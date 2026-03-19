@@ -44,6 +44,8 @@ Monitored infrastructure includes:
 
 ### Monitoring Coverage
 
+> Zabbix is not limited to the below monitoring. I do have zabbix monitoring metrics beyond these coverage areas (such as high availbility) but this is the common converages across all model types (excluding 60F models since those are fanless firewalls)
+
 - **Hardware sensors** — CPU temperature, fan RPM, voltage and power supply via snmp
 - **VPN tunnel status** — Monitored using the `fgVpnTunTable` OID branch with a custom value map for tunnel state.
 - **WiFi SSID status** — Operational status pulled via `ifTable` OIDs. Includes a note on resolving SNMP fragmentation over VPN using bulk walk options.
