@@ -47,4 +47,4 @@ echo "Uploading to S3..."
 aws s3 cp "$BACKUP_DIR" "$S3_BUCKET/ecs-backups/$(basename $BACKUP_DIR)/" --recursive
 
 echo ""
-echo "✅ Backup complete and uploaded to $S3_BUCKET/ecs-backups/$(basename $BACKUP_DIR)/"
+echo "Backup complete and uploaded to $S3_BUCKET/ecs-backups/$(basename $BACKUP_DIR)/"
