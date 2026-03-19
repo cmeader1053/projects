@@ -2,7 +2,7 @@
 
 This document covers post-install configuration in Zabbix UI, including authentication, alerting transport, and web frontend setup. 
 For the initial install, see `zabbix-server-install.md`.
-For SNMP setup and adding hosts to the Zabbix UI, see ``
+For SNMP setup and adding hosts to the Zabbix UI, see `fortigate-snmp-setup.md`
 
 ---
 
