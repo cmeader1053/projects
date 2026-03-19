@@ -7,7 +7,7 @@ projects including various versions of code as a way to show progress as things 
 
 ## Disclaimer!
 
-These are real world scripts that I have developed and used in production environments so prior to uploading all code has been santized to remove any sensitive information.
+These are real world scripts that I have developed and used in production environments so prior to uploading all code has been sanitized to remove any sensitive information.
 
 ## Executing 
 
