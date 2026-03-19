@@ -30,8 +30,7 @@ Monitored infrastructure includes:
 ```
 ├── docs/
 │   ├── setup/              # Initial install and configuration guides
-│   ├── templates/          # Notes on imported/custom Zabbix templates
-│   ├── alerting/           # Alert action configs, media types, notification setup
+│   ├── references/         # referene guides for Fortigate OID's and zabbix serer config files
 │   └── troubleshooting/    # Common issues and fixes
 ├── configs/
 │   ├── zabbix_server/      # Server config snippets (zabbix_server.conf notes)
