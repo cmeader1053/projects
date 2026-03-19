@@ -14,7 +14,7 @@ DOMAINS=(
   "[ENTER_OPENSEARCH_DOMAIN_2]"
 )
 
-echo "==> Starting OpenSearch backup: $TIMESTAMP"
+echo "Starting OpenSearch backup: $TIMESTAMP"
 echo "    S3 Target: s3://$S3_BUCKET/$S3_PREFIX/"
 echo ""
 
@@ -80,11 +80,11 @@ for DOMAIN in "${DOMAINS[@]}"; do
 done
 
 # Upload manifest
-echo "==> Uploading manifest..."
+echo "Uploading manifest..."
 aws s3 cp "$MANIFEST_FILE" "s3://$S3_BUCKET/$S3_PREFIX/manifest.json" --quiet
 echo "    s3://$S3_BUCKET/$S3_PREFIX/manifest.json"
 
 rm -rf "$TMP_DIR"
 echo ""
-echo "==> OpenSearch backup complete!"
+echo "OpenSearch backup complete!"
 echo "    All files under: s3://$S3_BUCKET/$S3_PREFIX/"
