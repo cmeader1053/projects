@@ -16,14 +16,14 @@ TABLES=(
 [ENTER_DB_TABLE_3]
 )
 
-echo "==> Starting DynamoDB backup: $TIMESTAMP"
+echo "Starting DynamoDB backup: $TIMESTAMP"
 echo "    S3 Target: s3://$S3_BUCKET/$S3_PREFIX/"
 echo ""
 
 echo '{"backup_timestamp":"'"$TIMESTAMP"'","tables":[]}' > "$MANIFEST_FILE"
 
 for TABLE in "${TABLES[@]}"; do
-  echo "==> Backing up table: $TABLE"
+  echo "Backing up table: $TABLE"
 
   # Table metadata/description
   TABLE_DESC=$(aws dynamodb describe-table \
@@ -92,11 +92,11 @@ for TABLE in "${TABLES[@]}"; do
 done
 
 # Upload manifest
-echo "==> Uploading manifest..."
+echo "Uploading manifest..."
 aws s3 cp "$MANIFEST_FILE" "s3://$S3_BUCKET/$S3_PREFIX/manifest.json"
 echo "    s3://$S3_BUCKET/$S3_PREFIX/manifest.json"
 
 rm -rf "$TMP_DIR"
 echo ""
-echo "==> DynamoDB backup complete!"
+echo "DynamoDB backup complete!"
 echo "    All files under: s3://$S3_BUCKET/$S3_PREFIX/"
