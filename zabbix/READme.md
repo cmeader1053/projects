@@ -32,12 +32,10 @@ Monitored infrastructure includes:
 │   ├── setup/              # Initial install and configuration guides
 │   ├── references/         # referene guides for Fortigate OID's and zabbix serer config files
 │   └── troubleshooting/    # Common issues and fixes
-├── configs/
-│   ├── zabbix_server/      # Server config snippets (zabbix_server.conf notes)
-│   ├── snmp/               # OID references, walk commands, index notes
-│   └── nginx/              # Web frontend config (FQDN, TLS)
-└── templates/
-    └── zbx_export_*.xml    # Exported Zabbix templates
+└── configs/
+    ├── zabbix_server/      # Server config snippets (zabbix_server.conf notes)
+    ├── snmp/               # OID references, walk commands, index notes
+    └── nginx/              # Web frontend config (FQDN, TLS)
 ```
 
 ---
