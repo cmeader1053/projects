@@ -7,6 +7,7 @@ Directions = Update the variables as seen fit to be called by the main.tf file.
 # Environment
 variable "environment" {
 	description = "Environment EC2 will be in"
+	type = string
 }
 
 # AWS Access
