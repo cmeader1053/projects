@@ -10,18 +10,6 @@ variable "environment" {
 	type = string
 }
 
-# AWS Access
-variable "aws_access_key_id" {
-	Description = "AWS access key for environment"
-	type = string
-}
-
-variable "aws_secret_access_key" {
-	Description = "AWS secret access key for environment"
-	type = string
-	sensitive = true
-}
-
 # Instance AMI
 variable "ami_id" {
 	description = "AMI ID for EC2 instance"
