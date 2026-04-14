@@ -4,6 +4,23 @@ Description = Variables Terraform document for EC2 Instance deployment.
 Directions = Update the variables as seen fit to be called by the main.tf file.
 */
 
+# Environment
+variable "environment" {
+	description = "Environment EC2 will be in"
+}
+
+# AWS Access
+variable "aws_access_key_id" {
+	Description = "AWS access key for environment"
+	type = string
+}
+
+variable "aws_secret_access_key" {
+	Description = "AWS secret access key for environment"
+	type = string
+	sensitive = true
+}
+
 # Instance AMI
 variable "ami_id" {
 	description = "AMI ID for EC2 instance"
