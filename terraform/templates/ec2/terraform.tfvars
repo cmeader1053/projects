@@ -4,6 +4,9 @@ Description = tfvars terraform document to deploy EC2 instances
 Directions = Update variables for the EC2 instance 
 */
 
+# Environment
+environment = "prod"
+
 # Instance Details
 name 			= "prd-web-svr"
 instance_type	= ""
