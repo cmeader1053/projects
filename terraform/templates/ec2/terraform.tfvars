@@ -7,6 +7,9 @@ Directions = Update variables for the EC2 instance
 # Environment
 environment = "prod"
 
+# AWS Region
+aws_region = "us-east-1"
+
 # Instance Details
 name 			= "prd-web-svr"
 instance_type	= "t2.micro"
