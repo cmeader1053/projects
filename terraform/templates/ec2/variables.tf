@@ -56,6 +56,11 @@ variable "root_vol_size" {
 	default = 20
 }
 
+variable "root_vol_type" {
+	description = "Root EBS volume type"
+	type = string
+}
+
 # EC2 Instance Name
 variable "name" {
 	description = "Name of EC2 instance"
