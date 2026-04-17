@@ -10,6 +10,12 @@ variable "environment" {
 	type = string
 }
 
+# AWS Region
+variable "aws_region" {
+	description = "AWS region EC2 will be in"
+	type = string
+}
+
 # Instance AMI
 variable "ami_id" {
 	description = "AMI ID for EC2 instance"
