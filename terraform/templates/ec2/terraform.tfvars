@@ -9,7 +9,7 @@ environment = "prod"
 
 # Instance Details
 name 			= "prd-web-svr"
-instance_type	= ""
+instance_type	= "t2.micro"
 root_vol_size	= 20	# Size in GB
 root_vol_type 	= "gp3"
 os_type			= "linux"
