@@ -21,6 +21,11 @@ variable "environment" {
   type        = string
 }
 
+variable "project" {
+  description = "Project or application name used for resource naming."
+  type        = string
+}
+
 # VPC Variables
 variable "vpc_cidr" {
   description = "Primary IPv4 CIDR block for the VPC."
