@@ -11,6 +11,7 @@ resource aws_instance "" {
 	vpc_security_group_ids		= var.sec_grp_id
 	key_name					= var.key_name
 	iam_instance_profile		= var.iam_profile
+	aws_region					= var.aws_region
 }
 
 # Root EBS Volume 
