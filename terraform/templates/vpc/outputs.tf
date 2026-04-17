@@ -6,25 +6,25 @@ Description  = Outputs terraform file for VPC creation in AWS
 # VPC ID
 output "vpc_id" {
   description = "ID of the VPC."
-  value       = aws_vpc.this.id
+  value       = aws_vpc.primary.id
 }
 
 # VPC ARN
 output "vpc_arn" {
   description = "ARN of the VPC."
-  value       = aws_vpc.this.arn
+  value       = aws_vpc.primary.arn
 }
 
 # VPC CIDR
 output "vpc_cidr" {
   description = "Primary CIDR block of the VPC."
-  value       = aws_vpc.this.cidr_block
+  value       = aws_vpc.primary.cidr_block
 }
 
 # Internet Gateway
 output "internet_gateway_id" {
   description = "ID of the internet gateway."
-  value       = aws_internet_gateway.this.id
+  value       = aws_internet_gateway.primary.id
 }
 
 # Public Subnet ID, CIDR & Route Table ID
@@ -62,7 +62,7 @@ output "private_route_table_ids" {
 # NAT Gateway ID and Public IP's
 output "nat_gateway_ids" {
   description = "List of NAT Gateway IDs. Empty if enable_nat_gateway = false."
-  value       = aws_nat_gateway.this[*].id
+  value       = aws_nat_gateway.primary[*].id
 }
 
 output "nat_gateway_public_ips" {
