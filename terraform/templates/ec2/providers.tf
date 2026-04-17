@@ -1,5 +1,5 @@
 /*
-Title       = EC2 Terraform Provider
+Title       = Terraform Provider
 Description = Provider configuration for AWS deployment.
 */
 
@@ -18,5 +18,5 @@ terraform {
 
 # AWS Region
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
