@@ -16,7 +16,7 @@ resource aws_instance "" {
 # Root EBS Volume 
 root_block_device {
 	volume_size				= var.root_vol_size
-	volume_type				= "gp3"
+	volume_type				= var.root_vol_type
 	encrypted				= true
 	delete_on_termination	= true
 }
