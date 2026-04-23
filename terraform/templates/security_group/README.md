@@ -62,8 +62,6 @@ rdp_cidr    = "10.0.0.0/8"
 allow_http  = true
 allow_https = true
 allow_rds   = false
-rds_port    = 3306
-rds_cidr    = "10.0.0.0/8"
 
 # Custom Ingress Rules
 custom_ingress_rules = []
@@ -145,7 +143,6 @@ Each common port is toggled on or off via a bool variable. If set to `false` the
 | `allow_rdp` | 3389 | TCP | Windows instance access |
 | `allow_http` | 80 | TCP | HTTP web traffic |
 | `allow_https` | 443 | TCP | HTTPS web traffic |
-| `allow_rds` | `rds_port` | TCP | Database access (MySQL/PostgreSQL) |
 
 > **Important:** Always restrict `ssh_cidr` and `rdp_cidr` to your office IP, VPN CIDR, or internal subnet range. Never leave these as `0.0.0.0/0` in a real deployment — open SSH and RDP to the world is one of the most common attack vectors in AWS.
 
@@ -182,18 +179,7 @@ Each rule requires all five fields. Leave `custom_ingress_rules = []` if no cust
 
 All outbound traffic is allowed by default. This is standard AWS practice — egress restrictions add significant complexity with minimal security benefit for most workloads.
 
----
 
-## RDS Port Reference
-
-When enabling `allow_rds`, set `rds_port` to match your database engine:
-
-| Engine | Port |
-|---|---|
-| MySQL / MariaDB | 3306 |
-| PostgreSQL | 5432 |
-| MSSQL | 1433 |
-| Oracle | 1521 |
 
 ---
 
@@ -236,8 +222,6 @@ terraform destroy
 | `allow_http` | bool | `false` | No | Enable HTTP ingress rule (port 80) |
 | `allow_https` | bool | `false` | No | Enable HTTPS ingress rule (port 443) |
 | `allow_rds` | bool | `false` | No | Enable RDS ingress rule |
-| `rds_port` | number | `3306` | No | Database port for RDS rule |
-| `rds_cidr` | string | `10.0.0.0/8` | No | CIDR allowed for RDS access |
 | `custom_ingress_rules` | list(object) | `[]` | No | List of custom ingress rules |
 | `environment` | string | — | Yes | Environment label (DEV, UAT, PROD) |
 | `owner` | string | — | Yes | Owner or point of contact for the resource |
