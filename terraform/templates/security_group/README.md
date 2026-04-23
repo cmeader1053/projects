@@ -1,6 +1,6 @@
 # AWS Security Group Terraform Template
 
-A reusable Terraform template for deploying a security group in AWS. Supports toggleable common ingress rules (SSH, RDP, HTTP, HTTPS, RDS) and fully custom ingress rules via tfvars. Designed to be deployed once and referenced by EC2, RDS, and ALB templates.
+A reusable Terraform template for deploying a security group in AWS. Supports toggleable common ingress rules (SSH, RDP, HTTP, HTTPS) and fully custom ingress rules via tfvars. Designed to be deployed once and referenced by EC2, RDS, and ALB templates.
 
 ---
 
@@ -61,7 +61,6 @@ allow_rdp   = false
 rdp_cidr    = "10.0.0.0/8"
 allow_http  = true
 allow_https = true
-allow_rds   = false
 
 # Custom Ingress Rules
 custom_ingress_rules = []
@@ -179,20 +178,15 @@ Each rule requires all five fields. Leave `custom_ingress_rules = []` if no cust
 
 All outbound traffic is allowed by default. This is standard AWS practice — egress restrictions add significant complexity with minimal security benefit for most workloads.
 
-
-
 ---
 
 ## Using the Output in Other Templates
 
-After deploying this template, copy the `security_group_id` output into the EC2, RDS, or ALB `terraform.tfvars`:
+After deploying this template, copy the `security_group_id` output into your EC2 or ALB `terraform.tfvars`:
 
 ```hcl
 # EC2 terraform.tfvars
 sec_grp_ids = ["sg-0abc123def456789"]
-
-# RDS terraform.tfvars
-vpc_security_group_ids = ["sg-0abc123def456789"]
 ```
 
 ---
@@ -203,7 +197,7 @@ vpc_security_group_ids = ["sg-0abc123def456789"]
 terraform destroy
 ```
 
-> **Note:** A security group cannot be destroyed while it is still attached to an active resource. Destroy or detach any EC2 instances, RDS databases, or ALBs using this security group first.
+> **Note:** A security group cannot be destroyed while it is still attached to an active resource. Destroy or detach any EC2 instances or ALBs using this security group first.
 
 ---
 
@@ -221,7 +215,6 @@ terraform destroy
 | `rdp_cidr` | string | `0.0.0.0/0` | No | CIDR allowed for RDP. Restrict in production. |
 | `allow_http` | bool | `false` | No | Enable HTTP ingress rule (port 80) |
 | `allow_https` | bool | `false` | No | Enable HTTPS ingress rule (port 443) |
-| `allow_rds` | bool | `false` | No | Enable RDS ingress rule |
 | `custom_ingress_rules` | list(object) | `[]` | No | List of custom ingress rules |
 | `environment` | string | — | Yes | Environment label (DEV, UAT, PROD) |
 | `owner` | string | — | Yes | Owner or point of contact for the resource |
